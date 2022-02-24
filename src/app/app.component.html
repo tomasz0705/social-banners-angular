@@ -30,14 +30,24 @@
   <div class="settings">
     <label>Kolor 1</label>
     <div class="colors">
-      <span class="badge"></span>
+      <span
+        class="badge"
+        *ngFor="let color of colors"
+        [ngClass]="color"
+        (click)="color1 = color"
+      ></span>
     </div>
 
     <input type="range" min="0" max="100" [(ngModel)]="percentColor1" />
 
     <label>Kolor 2</label>
     <div class="colors">
-      <span class="badge"></span>
+      <span
+        class="badge"
+        *ngFor="let color of colors.reverse()"
+        [ngClass]="color"
+        (click)="color2 = color"
+      ></span>
     </div>
     <input type="range" min="0" max="100" [(ngModel)]="percentColor2" />
 
@@ -48,7 +58,7 @@
     <input type="range" min="0" max="1000" step="50" [(ngModel)]="height" />
 
     <label>Rozmiar czcionki</label>
-    <input type="range" min="12" max="72" [(ngModel)]="fontSize"/>
+    <input type="range" min="12" max="72" [(ngModel)]="fontSize" />
   </div>
   <!-- Component Settings End -->
 </div>
